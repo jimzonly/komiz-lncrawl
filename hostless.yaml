@@ -1,0 +1,17 @@
+build:
+  system: docker
+dockerfile_path: "./Dockerfile"
+
+scaling:
+  trigger: http_requests
+  min_replicas: 1
+  max_replicas: 1
+  min_cpu: 0.5
+  max_cpu: 1
+  min_memory: 512
+  max_memory: 1024
+
+health_check:
+  type: http
+  http_path: "/health"
+  interval_in_seconds: 30
